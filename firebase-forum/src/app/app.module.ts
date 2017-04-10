@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { ForumLoginComponent } from './forum-login.component';
 
 export const firebaseConfig = {
 	apiKey: "AIzaSyDM8TQgMOKblnyKfjqPArpFWJWtINaeweQ",
@@ -14,20 +15,21 @@ export const firebaseConfig = {
     messagingSenderId: "738469563138"
   };
 
+  const myFirebaseAuthConfig = {
+    provider: AuthProviders.Google,
+    method: AuthMethods.Redirect
+  };// User credtentials
+
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ ForumLoginComponent , AppComponent ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-	AngularFireModule.initializeApp(firebaseConfig)
+	AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ForumLoginComponent]
 })
 export class AppModule { }
-
-
-
