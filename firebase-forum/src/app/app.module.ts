@@ -7,12 +7,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 
 export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
-};
+	apiKey: "AIzaSyDM8TQgMOKblnyKfjqPArpFWJWtINaeweQ",
+    authDomain: "fir-forum.firebaseapp.com",
+    databaseURL: "https://fir-forum.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "738469563138"
+  };
 
 @NgModule({
   declarations: [
@@ -21,9 +21,13 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+	AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
