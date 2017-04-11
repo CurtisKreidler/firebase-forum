@@ -18,7 +18,7 @@ export class ForumLoginComponent{
       provider: AuthProviders.Github,
       method: AuthMethods.Popup,
     })
-    this.router.navigate(['./app']);
+    this.router.navigate(['./user-posts']);
   }
 
 

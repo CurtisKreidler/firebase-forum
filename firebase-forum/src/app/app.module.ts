@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 //import { AuthGuardService } from './auth-gaurd.service';
 import { AppComponent } from './app.component';
 import { ForumLoginComponent } from './forum-login.component';
+import { MessagesComponent } from './messages/messages.component';
 
 export const firebaseConfig = {
 	apiKey: "AIzaSyDM8TQgMOKblnyKfjqPArpFWJWtINaeweQ",
@@ -19,7 +20,10 @@ export const firebaseConfig = {
   };
 
 const appRoutes: Routes = [
-  {path: 'app', component: AppComponent}
+	{path:'', redirectTo: 'forum-login', pathMatch:'full' },
+	{path: 'forum-login', component: ForumLoginComponent},
+	{path: 'user-posts', component: MessagesComponent}
+
 ];
 
   const myFirebaseAuthConfig = {
@@ -29,7 +33,7 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [ ForumLoginComponent , AppComponent ],
+  declarations: [ ForumLoginComponent , AppComponent, MessagesComponent ],
   imports: [
     BrowserModule,
     FormsModule,

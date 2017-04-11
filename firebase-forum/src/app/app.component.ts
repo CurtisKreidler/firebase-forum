@@ -6,12 +6,9 @@ import { ForumLoginComponent } from './forum-login.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `<router-outlet></router-outlet>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items:FirebaseListObservable <any[]>;
-  constructor( af: AngularFire ){//I have no idea what this syntax is
-	this.items = af.database.list('/Curtis');
-  }
+
 }
