@@ -10,7 +10,6 @@ import { ForumLoginComponent } from './forum-login.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   items:FirebaseListObservable <any[]>;
   constructor( af: AngularFire ){//I have no idea what this syntax is
 	this.items = af.database.list('/Curtis');

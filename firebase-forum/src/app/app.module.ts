@@ -6,6 +6,7 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+//import { AuthGuardService } from './auth-gaurd.service';
 import { AppComponent } from './app.component';
 import { ForumLoginComponent } from './forum-login.component';
 

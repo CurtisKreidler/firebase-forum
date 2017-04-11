@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,8 @@ import { RouterModule } from '@angular/router';
 })
 
 export class ForumLoginComponent{
-  constructor(public af: AngularFire) {
+
+  constructor(public af: AngularFire, private router: Router) {
     this.af.auth.subscribe(auth => console.log(auth));
   }
   login() {
@@ -17,7 +18,7 @@ export class ForumLoginComponent{
       provider: AuthProviders.Github,
       method: AuthMethods.Popup,
     })
-
+    this.router.navigate(['./app']);
   }
 
 
