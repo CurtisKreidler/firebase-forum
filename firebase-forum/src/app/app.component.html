@@ -1,8 +1,11 @@
-
+<style> 
+ul.a {
+    list-style-type: circle;
+}
+</style>
 <ul>
-	<li class="text" *ngFor="let item of items | async">
+	<li class="a" *ngFor="let item of items | async">
 		{{item.$value}}
 	</li>
 </ul>
-<button (click)="login()">Login</button>
 <button (click)="logout()">Logout</button>
