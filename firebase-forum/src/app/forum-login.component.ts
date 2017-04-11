@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {AngularFire, AuthMethods, AuthProviders} from 'angularfire2';
+import { Component, OnInit } from '@angular/core';
+import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +14,22 @@ export class ForumLoginComponent{
   }
   login() {
     this.af.auth.login({
-      provider: AuthProviders.Twitter,
+      provider: AuthProviders.Github,
       method: AuthMethods.Popup,
-    });
+    })
+
   }
-  overrideLogin() {
-    this.af.auth.login({
-      provider: AuthProviders.Anonymous,
-      method: AuthMethods.Anonymous,
-    });
-  }
+
+
+
+
+
+  // overrideLogin() {
+  //   this.af.auth.login({
+  //     provider: AuthProviders.Anonymous,
+  //     method: AuthMethods.Anonymous,
+  //   });
+  // }
+
 
 }
